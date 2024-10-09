@@ -1,13 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{nombre_sistema}}</title>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
 </head>
 <body>
-    <h2>{{mensaje}}</h2>
-    <h3>{{nombre_sistema}}</h3>
-    <p>{{materia}}</p>
+    <div class="login-container">
+        <div class="login-image"></div>
+
+     
+        <div class="login-form">
+            <h2>Bienvenidos</h2>
+            
+                
+            <form action="" method="POST">
+                <fieldset style="padding: 40px; ">
+                   
+                Usuario: <input type="text" name="usuario" placeholder="Nombre" id="usuario">
+                Contraseña: <input type="password" name="clave" placeholder="Contraseña" id="usuario">
+                <button type="button" class="btn btn-success" id="entrar">Entrar Sistema</button>
+            </fieldset>
+            </form>
+    <span class="error"></span>
+        </div>
+    </div>
 </body>
 </html>

@@ -2,4 +2,7 @@ from django.shortcuts import render
 
 
 def captura(request):
-    return render(request, 'boleto/captura.html',{})
+    ventana = "Ventana de Captura de Tickets"
+    return render(request, 'boleto/captura.html',{
+        'msj':ventana
+    })

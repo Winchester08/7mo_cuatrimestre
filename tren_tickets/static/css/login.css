@@ -1,0 +1,91 @@
+ /* General CSS reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.login-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    height: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la imagen */
+.login-image {
+    flex: 1;
+    background-image: url('../images/tren2.jpg');
+    
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para el formulario */
+.login-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para enlaces */
+.login-form p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-form p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.login-form p a:hover {
+    text-decoration: underline;
+}
+.login-form button:hover{
+    background-color: steelblue;
+    font-weight: bold;
+    width: 150px;
+    height: 55px;
+}
