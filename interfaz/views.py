@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def inicio(request):
-    mensaje = 'Ventana de Inicio'
+    sistema = 'Sistema de Tickets'
+    mensaje = 'Bienvenidos'
     return render(request, 'interfaz/inicio.html',{
-    'msj':mensaje    
+    'msj':mensaje,
+    'sistema': sistema  
     })
 
 def login(request):
