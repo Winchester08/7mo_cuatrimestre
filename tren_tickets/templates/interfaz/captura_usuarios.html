@@ -1,0 +1,33 @@
+
+{% extends 'plantillas/base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="untree_co-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 mb-5 mb-lg-0">
+          <form class="contact-form" data-aos="fade-up" data-aos-delay="200" method="POST">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  {% for datos_form in campos_formulario %}
+                  <label class="text-black" for="fname">{{datos_form.label}}</label>
+                  <input type="{{ datos_form.field.widget.input_type }}"
+                  value="{{datos_form.label}}"
+                  name="{{datos_form.name}}"
+                  placeholder="{{datos_form.label}}"
+                  class="form-control" 
+                  id="fname">
+                  {% endfor %}
+                </div>
+              </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+      </form>    
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

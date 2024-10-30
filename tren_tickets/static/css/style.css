@@ -555,7 +555,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     padding: 9rem 0 7rem 0;
     margin-bottom: auto;
     background: #1A374D; }
-  .hero h1 {hero
+  .hero h1 {
     color: #ffffff;
     font-size: 60px; }
     @media (max-width: 991.98px) {
@@ -574,6 +574,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   .hero .intro-wrap {
     position: relative;
     z-index: 1; }
+    
   .hero .slides {
     background: #ffffff;
     max-width: 800px;

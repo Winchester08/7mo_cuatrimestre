@@ -8,6 +8,7 @@ class trenes(models.Model):
 class boleto(models.Model):
     fecha = models.DateField(verbose_name='Fecha')
     nombre = models.CharField(max_length=30, verbose_name='Nombre Usuario')
+    num_personas = models.IntegerField(max_length=3, verbose_name='Num Personas',default=1)
     telefono = models.CharField(max_length=10, verbose_name='Telefono', default='0000')
     num_boleto = models.CharField(max_length=10, verbose_name='Num Boleto')
     origen = models.CharField(max_length=100, verbose_name='Origen')
