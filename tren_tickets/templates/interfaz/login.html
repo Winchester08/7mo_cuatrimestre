@@ -18,16 +18,21 @@
             <h3>Tren Tickets | RW</h3>
             
                 
-            <form action="" method="POST">
+            <form action="{% url 'validar' %}" method="POST">
+               {% csrf_token %}
                 <fieldset style="padding: 40px; ">
                    
                 Usuario: <input type="text" name="usuario" placeholder="Nombre" id="usuario">
                 Contraseña: <input type="password" name="clave" placeholder="Contraseña" id="usuario">
-                <button type="button" class="btn btn-success" id="entrar">Entrar Sistema</button>
+                <button type="submit" class="btn btn-success" id="entrar">Entrar Sistema</button>
             </fieldset>
             </form>
-    <span class="error"></span>
+        {% if messages %}
+        {% for mensajes in messages %}
+       <span>{{mensajes}}</span>
         </div>
+        {% endfor %}
+        {% endif %}
     </div>
 </body>
 </html>

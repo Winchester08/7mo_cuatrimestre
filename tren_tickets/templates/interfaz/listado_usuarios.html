@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{nombre_sistema}}</title>
+</head>
+<body>
+    {{materia}}
+    <p>Datos de Usuarios</p>
+    <table>
+        <tr>
+            <td>Nombre</td><td>Usuario</td><td>Tipo de Usuario</td><td>Verificacion</td>
+        </tr>
+        {% for datos_usuario in usuarios %}
+        <tr>
+            <td> {{ datos_usuario.nombre }}</td>
+            <td> {{ datos_usuario.tipo_usuario }}</td>
+            <td> {{ datos_usuario.usuario }}</td>
+            <td> {{ datos_usuario.verificacion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
