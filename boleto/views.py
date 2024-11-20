@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from . models import boleto
 from . forms import Captura_Form
 from datetime import date
@@ -42,7 +42,7 @@ def captura(request):
                         hllegada=hl, asiento=sit, estatus=es, folio=fol, nota=nota,
                         observaciones=ob, precio=p, tren=tren, vagon=vag, num_personas=np)
         guarda.save()
-        return HttpResponse("Datos guardados con exito")
+        return redirect('listado_boletos')
     
     return render(request, 'boleto/captura.html',{
         'msj':ventana,
@@ -51,12 +51,26 @@ def captura(request):
         'num_fol':folio
     })
 
+def listado_salidas(request):
+    salidas = boleto.objects.all()
+    ven = "Ultimos Boletos"
+    return render(request, 'boleto/listado_datos.html',{
+        'boletos':salidas,
+        'ven':ven
+    })
+
+def borrado_boletos(request, id):
+    borra = boleto.objects.get(id=id)
+    borra.delete()
+    return redirect('salidas')
+
 
 def pdf_file(request):
-    titulo = "Archivo PDF en Linux"
+    titulo = "Archivo PDF Linux"
     file = get_template('plantillas/pdf.html')
     html = file.render({'titulo':titulo})
     pdf = HTML(string=html).write_pdf()
     res = HttpResponse(pdf, content_type='application/pdf')
     res['Content-Disposition']='inline; filename="ticket_rw.pdf"'
     return res
+

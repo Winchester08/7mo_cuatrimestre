@@ -1,12 +1,67 @@
 {% extends 'plantillas/base.html' %}
 {% load static %}
 {% block contenido %}
-
 <div class="untree_co-section">
     <div class="container">
-        
-                <h2 class="section-title text-center mb-3">Ultimas Salidas</h2>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-6 text-center">
+                <h2 class="section-title text-center mb-3">{{ven}}</h2>
+
+            </div>
+            <div class="py-5 cta-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-14">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Num</h2>
+                                    </td>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Boleto</h2>
+                                    </td>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Origen</h2>
+                                    </td>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Destino</h2>
+                                    </td>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Pasajero</h2>
+                                    </td>
+                                    <td>
+                                        <h2 class="mb-2 text-white">Folio</h2>
+                                    </td>
+                                    <td colspan="3">
+                                        <h2 class="mb-2 text-white">Otras Acciones</h2>
+                                    </td>
+                                </tr>
+                                {% for datos_boleto in boletos %}
+                                <tr>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.id}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.num_boleto}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.origen}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.destino}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.nombre}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">{{datos_boleto.folio}}</td>
+                                    <td class="mb-4 lead text-white text-white-opacity">
+                                        <button class="btn btn-success">Imprimir</button></a>
+                                    </td>
+                                    <td class="mb-4 lead text-white text-white-opacity"><button class="btn btn-primary">Cambiar</button></td>
+                                    <td class="mb-4 lead text-white text-white-opacity">
+                                        <a href="{% url 'eliminar_boleto' datos_boleto.id %}"><button class="btn btn-danger">Borrar</button></a></td>
+                                </tr>
+                                {% endfor %}
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-    </div>
-</div>
+        </div>
+
+        
+                    </div>
+              
+
 {% endblock %}
