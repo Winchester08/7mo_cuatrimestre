@@ -1,0 +1,77 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="untree_co-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-title text-center mb-3"> Datos de Boleto para impresion</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form action="{% url 'impresion' %}" method="POST" class="form">
+                    {% csrf_token %}
+
+                    <h3>Fecha:</h3>
+                    <p class="mb-0">
+                        <input type="text" name="fecha" id="" class="form-control" value="{{fecha}}">
+                    </p>
+
+                    <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Lugar de Origen:</h3>
+                    <input type="text" name="origen" class="form-control" value="{{origen}}">
+                    <br>
+                    <h3>Lugar de Destino</h3>
+                    <p class="mb-0">
+                        <input type="text" name="destino" class="form-control" value="{{destino}}">
+                    </p>
+
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Hora de Salida:</h3>
+                    <input type="time" name="hsalida" class="form-control" value="{{hsal}}">
+                    <br>
+                    <h3>Hora Llegada</h3>
+                    <p class="mb-0">
+                        <input type="time" name="hllegada" class="form-control" value="{{hlle}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Fecha Salida:</h3>
+                    <input type="text" name="fsalida" class="form-control" value="{{fechas}}">
+                    <br>
+                    
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Nombre:</h3>
+                    <input type="text" name="nombre" class="form-control" value="{{usuario}}">
+                    <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Tren:</h3>
+                    <input type="text" name="tren" class="form-control" value="{{tren}}">
+                    <br>
+                    
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Asiento:</h3>
+                    <input type="text" name="asiento" class="form-control" value="{{sit}}">
+                    <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>No Boleto:</h3>
+                    <input type="text" name="num_boleto" id="num_boleto" class="form-control boleto_num"
+                        value="{{bn}}">
+                    <br>
+                    <h3>Folio</h3>
+                    <p class="mb-0">
+                        <input type="text" name="folio" id="folio" class="form-control folio" value="{{fol}}" >
+                    </p>
+                    <button class="btn btn-primary" type="submit">Imprimir Boleto</button>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
+    {% endblock %}

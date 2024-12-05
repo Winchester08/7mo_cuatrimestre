@@ -10,126 +10,126 @@
         </div>
         <div class="row">
             <div class="col-12">
-            <form action="" method="POST" class="form">
-                {% csrf_token %}
+                <form action="" method="POST" class="form">
+                    {% csrf_token %}
+                    <h3>Fecha:</h3>
+                    <p class="mb-0">
+                        <input type="text" name="fecha" id="" class="form-control" value="{{nfecha}}">
+                    </p>
 
-                            <h3>Fecha:</h3>
-                            <p class="mb-0">
-                                <input type="text" name="fecha" id="" class="form-control" value="{{nfecha}}">
-                            </p>
-                            
-                            <br>
-                            <h3>Numero de Personas:</h3>
-                            <p class="mb-0">
-                                <input type="number" name="num_personas" class="form-control">
-                            </p>
-                       
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Lugar de Origen:</h3>
-                            <input type="text" name="origen" class="form-control">
-                            <br>
-                            <h3>Lugar de Destino</h3>
-                            <p class="mb-0">
-                                <input type="text" name="destino" class="form-control">
-                            </p>
-               
-                
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Hora de Salida:</h3>
-                            <input type="time" name="hsalida" class="form-control">
-                            <br>
-                            <h3>Hora Llegada</h3>
-                            <p class="mb-0">
-                                <input type="time" name="hllegada" class="form-control">
-                            </p>
-                      
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Fecha Salida:</h3>
-                            <input type="text" name="fsalida" class="form-control" value="{{nfecha}}">
-                            <br>
-                            <h3>Fecha Llegada</h3>
-                            <p class="mb-0">
-                                <input type="text" name="fllegada" class="form-control" value="{{nfecha}}">
-                            </p>
-                       
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Nombre:</h3>
-                            <input type="text" name="nombre" class="form-control">
-                            <br>
-
-                            <p class="mb-0">
-                            <h3>Telefono:</h3>
-                            <input type="text" name="telefono" class="form-control">
-                            </p>
-                      
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Tren:</h3>
-                            <select name="tren" class="form-control">
-                                <option value="0">Selecciona un Tren</option>
-                                <option value="1">Tren # 1</option>
-                                <option value="2">Tren # 2</option>
-                                <option value="3">Tren # 3</option>
-                                <option value="4">Tren # 4</option>
-                            </select>
-                            <br>
-                            <h3>Vagon</h3>
-                            <p class="mb-0">
-                                <select name="vagon" class="form-control">
-                                    <option value="0">Selecciona un Vagon</option>
-                                    <option value="1">Vagon # 1</option>
-                                    <option value="2">Vagon # 2</option>
-                                    <option value="3">Vagon # 3</option>
-
-                                </select>
-                            </p>
-                       
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Asiento:</h3>
-                            <select name="asiento" class="form-control">
-                                <option value="0">Selecciona un Asiento</option>
-                                <option value="1">Asiento # 1</option>
-                                <option value="2">Asiento # 2</option>
-                                <option value="3">Asiento # 3</option>
-
-                            </select>
-                            <br>
-                            <h3>Estatus</h3>
-                            <p class="mb-0">
-                                <input type="text" name="estatus" class="form-control">
-                            </p>
+                    <br>
+                    <h3>Numero de Personas:</h3>
+                    <p class="mb-0">
+                        <input type="number" name="num_personas" class="form-control num_personas">
                         
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Precio:</h3>
-                            <input type="text" name="precio" class="form-control">
-                            <br>
-                            <h3>Observaciones</h3>
-                            <p class="mb-0">
-                                <input type="text" name="observaciones" class="form-control">
-                            </p>
-                        
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>No Boleto:</h3>
-                            <input type="text" name="num_boleto" id="num_boleto" class="form-control boleto_num" value="{{boleto_no}}">
-                            <br> 
-                            <h3>Folio</h3>
-                            <p class="mb-0">
-                                <input type="text" name="folio" id="folio" class="form-control folio" value="{{num_fol}}">
-                            </p>
-                        
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
-                            <h3>Nota:</h3>
-                            <input type="text" name="nota" class="form-control">
-                            <br>
-                            <span class="flaticon-phone-call display-4 text-primary"></span>
+                    </p>
 
-                            <button class="btn btn-primary" type="submit">Generar Boleto</button>
-                            <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Lugar de Origen:</h3>
+                    <input type="text" name="origen" class="form-control origen">
+                    <br>
+                    <h3>Lugar de Destino</h3>
+                    <p class="mb-0">
+                        <input type="text" name="destino" class="form-control destino">
+                    </p>
 
-                
-            </form>
-        </div>    
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Hora de Salida:</h3>
+                    <input type="time" name="hsalida" class="form-control hsalida">
+                    <br>
+                    <h3>Hora Llegada</h3>
+                    <p class="mb-0">
+                        <input type="time" name="hllegada" class="form-control hllegada">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Fecha Salida:</h3>
+                    <input type="text" name="fsalida" class="form-control fsalida" value="{{nfecha}}">
+                    <br>
+                    <h3>Fecha Llegada</h3>
+                    <p class="mb-0">
+                        <input type="text" name="fllegada" class="form-control fllegada" value="{{nfecha}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Nombre:</h3>
+                    <input type="text" name="nombre" class="form-control nombre">
+                    <br>
+
+                    <p class="mb-0">
+                    <h3>Telefono:</h3>
+                    <input type="text" name="telefono" class="form-control telefono">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Tren:</h3>
+                    <select name="tren" class="form-control tren">
+                        <option value="0">Selecciona un Tren</option>
+                        <option value="1">Tren # 1</option>
+                        <option value="2">Tren # 2</option>
+                        <option value="3">Tren # 3</option>
+                        <option value="4">Tren # 4</option>
+                    </select>
+                    <br>
+                    <h3>Vagon</h3>
+                    <p class="mb-0">
+                        <select name="vagon" class="form-control vagon">
+                            <option value="0">Selecciona un Vagon</option>
+                            <option value="1">Vagon # 1</option>
+                            <option value="2">Vagon # 2</option>
+                            <option value="3">Vagon # 3</option>
+
+                        </select>
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Asiento:</h3>
+                    <select name="asiento" class="form-control asiento">
+                        <option value="0">Selecciona un Asiento</option>
+                        <option value="1">Asiento # 1</option>
+                        <option value="2">Asiento # 2</option>
+                        <option value="3">Asiento # 3</option>
+
+                    </select>
+                    <br>
+                    <h3>Estatus</h3>
+                    <p class="mb-0">
+                        <input type="text" name="estatus" class="form-control estatus">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Precio:</h3>
+                    <input type="text" name="precio" class="form-control precio">
+                    <br>
+                    <h3>Observaciones</h3>
+                    <p class="mb-0">
+                        <input type="text" name="observaciones" class="form-control observaciones">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>No Boleto:</h3>
+                    <input type="text" name="num_boleto" id="num_boleto" class="form-control boleto_num"
+                        value="{{boleto_no}}">
+                    <br>
+                    <h3>Folio</h3>
+                    <p class="mb-0">
+                        <input type="text" name="folio" id="folio" class="form-control folio" value="{{num_fol}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Nota:</h3>
+                    <input type="text" name="nota" class="form-control nota">
+                    <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+
+                    <button class="btn btn-primary genera_boleto" type="button">Generar Boleto</button>
+                    <br>
+                </form>
+                <span class="error-form">!! Existen campos vacios</span>
+            </div>
         </div>
     </div>
-    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
-    <script src="{% static 'js/funciones.js' %}"></script>
+
     {% endblock %}
+    

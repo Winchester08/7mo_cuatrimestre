@@ -1,0 +1,137 @@
+{% extends 'plantillas/base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="untree_co-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-title text-center mb-3">{{ventana}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form action="{% url 'accion_boleto' id %}" method="POST" class="form">
+                    {% csrf_token %}
+
+                    <h3>Fecha:</h3>
+                    <p class="mb-0">
+                        <input type="text" name="fecha" id="" class="form-control" value="{{fecha}}">
+                        <input type="hidden" name="id" id="" class="form-control" value="{{id}}">
+                    </p>
+
+                    <br>
+                    <h3>Numero de Personas:</h3>
+                    <p class="mb-0">
+                        <input type="number" name="num_personas" class="form-control" value="{{num_personas}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Lugar de Origen:</h3>
+                    <input type="text" name="origen" class="form-control" value="{{origen}}">
+                    <br>
+                    <h3>Lugar de Destino</h3>
+                    <p class="mb-0">
+                        <input type="text" name="destino" class="form-control" value="{{destino}}">
+                    </p>
+
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Hora de Salida:</h3>
+                    <input type="time" name="hsalida" class="form-control" value="{{hsalida}}">
+                    <br>
+                    <h3>Hora Llegada</h3>
+                    <p class="mb-0">
+                        <input type="time" name="hllegada" class="form-control" value="{{hllegada}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Fecha Salida:</h3>
+                    <input type="text" name="fecha_salida" class="form-control" value="{{fecha_salida}}">
+                    <br>
+                    <h3>Fecha Llegada</h3>
+                    <p class="mb-0">
+                        <input type="text" name="fecha_llegada" class="form-control" value="{{fecha_llegada}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Nombre:</h3>
+                    <input type="text" name="nombre" class="form-control" value="{{nombre}}">
+                    <br>
+
+                    <p class="mb-0">
+                    <h3>Telefono:</h3>
+                    <input type="text" name="telefono" class="form-control" value="{{telefono}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Tren:</h3>
+                    <select name="tren" class="form-control">
+                        <option value="{{tren}}">Tren ---- {{tren}} ----</option>
+                        <option value="1">Tren # 1</option>
+                        <option value="2">Tren # 2</option>
+                        <option value="3">Tren # 3</option>
+                        <option value="4">Tren # 4</option>
+                    </select>
+                    <br>
+                    <h3>Vagon</h3>
+                    <p class="mb-0">
+                        <select name="vagon" class="form-control">
+                            <option value="{{vagon}}">Vagon ---- {{vagon}} ---- </option>
+                            <option value="1">Vagon # 1</option>
+                            <option value="2">Vagon # 2</oNingunaption>
+                            <option value="3">Vagon # 3</option>
+
+                        </select>
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Asiento:</h3>
+                    <select name="asiento" class="form-control">
+                        <option value="{{asiento}}">Asiento ---- {{asiento}} ---- </option>
+                        <option value="1">Asiento # 1</option>
+                        <option value="2">Asiento # 2</option>
+                        <option value="3">Asiento # 3</option>
+
+                    </select>
+                    <br>
+                    <h3>Estatus</h3>
+                    <p class="mb-0">
+                        <input type="text" name="estatus" class="form-control" value="{{estatus}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Precio:</h3>
+                    <input type="text" name="precio" class="form-control" value="{{precio}}">
+                    <br>
+                    <h3>Observaciones</h3>
+                    <p class="mb-0">
+                        <input type="text" name="observaciones" class="form-control" value="{{observaciones}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>No Boleto:</h3>
+                    <input type="text" name="num_boleto" id="num_boleto" class="form-control boleto_num"
+                        value="{{num_boleto}}">
+                    <br>
+                    <h3>Folio</h3>
+                    <p class="mb-0">
+                        <input type="text" name="folio" id="folio" class="form-control folio" value="{{folio}}">
+                    </p>
+
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+                    <h3>Nota:</h3>
+                    <input type="text" name="nota" class="form-control" value="{{nota}}">
+                    <br>
+                    <span class="flaticon-phone-call display-4 text-primary"></span>
+
+                    <button class="btn btn-warning" type="submit">Actualizar Boleto</button>
+                    <br>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
+    {% endblock %}

@@ -40,8 +40,7 @@
 					<li class="active"><a href="{% url 'inicio' %}">Inicio</a></li>
 					<li class="has-children">
 					</li>
-					<li><a href="services.html">Salidas</a></li>
-					<li><a href="about.html">Destinos</a></li>
+					<li><a href="{% url 'salidas' %}">Salidas</a></li>
 					<li><a href="{% url 'captura_ticket' %}">Compra Tickets</a></li>
 				</ul>
 
@@ -152,7 +151,8 @@
 
 	</div>
     </body>
-    <script src="{% static '/js/jquery-3.4.1.min.js' %}"></script>
+
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
 	<script src="{% static '/js/popper.min.js' %}"></script>
 	<script src="{% static '/js/bootstrap.min.js' %}"></script>
 	<script src="{% static '/js/owl.carousel.min.js' %}"></script>
@@ -164,33 +164,11 @@
 	<script src="{% static '/js/daterangepicker.js' %}"></script>
 	<script src="{% static '/js/block.ui.js' %}"></script>
 	<script src="{% static '/js/elimina.js' %}"></script>
+	
 	<script src="{% static '/js/typed.js' %}"></script>
-	<script>
-		$(function () {
-			var slides = $('.slides'),
-				images = slides.find('img');
-
-			images.each(function (i) {
-				$(this).attr('data-id', i + 1);
-			})
-
-			var typed = new Typed('.typed-words', {
-				strings: ["San Francisco.", " Paris.", " New Zealand.", " Maui.", " London."],
-				typeSpeed: 80,
-				backSpeed: 80,
-				backDelay: 4000,
-				startDelay: 1000,
-				loop: true,
-				showCursor: true,
-				preStringTyped: (arrayPos, self) => {
-					arrayPos++;
-					console.log(arrayPos);
-					$('.slides img').removeClass('active');
-					$('.slides img[data-id="' + arrayPos + '"]').addClass('active');
-				}
-
-			});
-		})
-	</script>
+	
 
 	<script src="{%static '/js/custom.js' %}"></script>
+    <script src="{% static '/js/block.ui.js' %}"></script>
+	<script src="{% static '/js/funciones.js' %}"></script>
+    

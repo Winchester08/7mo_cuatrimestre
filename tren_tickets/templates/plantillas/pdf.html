@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Boarding ticket</title>
+    <title>Sistema de Ticket | RW </title>
     <meta name="description" content="Boarding ticket">
   </head>
 <style>
@@ -15,14 +15,14 @@
 html {
   align-content: center;
   align-items: center;
-  background: #eef1f5;
+  background: #fff;
   display: flex;
   font-family: Barlow Condensed, sans-serif;
   height: 100%;
   justify-content: center;
 }
 body {
-  background: #fff;
+  background: #a8a5a5;
   box-sizing: border-box;
   color: #2A3239;
   display: flex;
@@ -68,19 +68,25 @@ li {
 }
 #informations h1 {
   display: inline-block;
-  font-size: 25pt;
+  font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
 }
 #informations #name {
   margin-left: 1cm;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 18px;
 }
 #informations #destination {
   position: absolute;
-  right: 1cm;
+  right: 0.5cm;
+  margin-top: 40px;
+  font-size: 15px;
+  font-weight: bold;
 }
 #informations dl {
-  background: #2A3239;
+  background: #13007d;
   color: #fff;
   margin: 0;
   padding: 1cm 0;
@@ -100,7 +106,7 @@ li {
   padding: 0.15cm;
 }
 #informations li:first-of-type {
-  background: #2A3239;
+  background: #13007d;
   border-radius: 4pt;
   color: #fff;
 }
@@ -116,10 +122,12 @@ li {
   border-left: 1pt dashed #2A3239;
   display: flex;
   flex-direction: column;
-  height: 8cm;
+  height: 9.7cm;
   justify-content: space-around;
   padding: 0 1cm;
 }
+
+
 #ticket h2 {
   font-weight: 300;
   margin: 0;
@@ -141,41 +149,43 @@ li {
   <body>
     <section id="informations">
       <h1 id="name">{{titulo}}</h1>
-      <h1 id="destination">CDG ✈ LFLL</h1>
+      <h1 id="destination" style="color:#fff; font-weight: bold;"> {{or}} ✈ {{des}} </h1>
       <dl>
-        <dt>Flight</dt>
-        <dd>DL31</dd>
-        <dt>Gate</dt>
-        <dd>29</dd>
-        <dt>Seat</dt>
-        <dd>26E</dd>
-        <dt>Zone</dt>
-        <dd>4</dd>
+        <dt>Tren</dt>
+        <dd>{{tren}}</dd>
+        <dt>Asiento</dt>
+        <dd>{{sit}}</dd>
+        <dt>Folio</dt>
+        <dd style="color:#d9e408; font-weight: bold;">{{fol}}</dd>
+        <dt>Hora</dt>
+        <dd>{{salida}}</dd>
       </dl>
       <ul>
-        <li>5:10pm</li>
-        <li>Dec 15, 2018</li>
-        <li>Coach</li>
-        <li>1257797706706</li>
+        <li>Fecha salida <b>--- {{fecha}} --- </b><br>Hora Salida <b>--- {{salida}} --- </b></li>
+        <li></li>
+        
+        <li></li>
+        <li style="color:#e43808; font-weight: bold;">No. {{boleto}}</li>
       </ul>
     </section>
 
     <section id="ticket">
-      <p>1257797706706</p>
-      <h2>Théodore Marcelin</h2>
+      <p style="color:#e43808; font-weight: bold;">{{boleto}}</p>
+      <h2>{{nombre}}</h2>
+      
       <dl>
-        <dt>Flight</dt>
-        <dd>DL31</dd>
-        <dt>Gate</dt>
-        <dd>29</dd>
-        <dt>Seat</dt>
-        <dd>26E</dd>
-        <dt>Zone</dt>
-        <dd>4</dd>
+        <dt>Tren</dt>
+        <dd>{{tren}}</dd>
+        <dt>Asiento</dt>
+        <dd>{{sit}}</dd>
+        <dt>Folio</dt>
+        <dd style="color:#d9e408; font-weight: bold;">{{fol}}</dd>
+        <dt>Hora</dt>
+        <dd>{{salida}}</dd>
       </dl>
       <ul>
-        <li>CDG ✈ LFLL</li>
-        <li>5:10pm</li>
+        <li style="color:#fff; font-weight: bold;">-------- {{or}} ✈ {{des}} -------- </li>
+        
       </ul>
     </section>
   </body>
